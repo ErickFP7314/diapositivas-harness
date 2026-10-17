@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  color-scheme: dark;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #05080c;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f5ff;
+}
+
+/* Glowing cyan & green effects */
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.25), inset 0 0 10px rgba(0, 245, 255, 0.1);
+}
+.glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.25), inset 0 0 10px rgba(0, 255, 136, 0.1);
+}
+.glow-border-cyan {
+  border-color: rgba(0, 245, 255, 0.6);
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.3);
+}
+.glow-border-green {
+  border-color: rgba(0, 255, 136, 0.6);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+}
+
+.text-gradient-cyan-green {
+  background: linear-gradient(135deg, #00f5ff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scanline / Grid background overlay */
+.cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-dots {
+  background-image: radial-gradient(rgba(0, 245, 255, 0.12) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Terminal pulsing cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-cursor {
+  animation: blink 1s infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(0, 255, 136, 0.6));
+  }
+}
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
